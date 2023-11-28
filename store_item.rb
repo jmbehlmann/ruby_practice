@@ -20,10 +20,10 @@ p plant2
 p plant3
 
 class Plants
-  def initialize(name, size, price)
-    attr_reader :name, :size, :price
-    attr_writer :name, :size, :price
+  attr_reader :name, :size, :price
+  attr_writer :name, :size, :price
 
+  def initialize(name, size, price)
     @name = name
     @size = size
     @price = price
