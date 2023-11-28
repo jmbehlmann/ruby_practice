@@ -29,17 +29,18 @@ class Plant
   attr_reader :name, :size, :price
   attr_writer :name, :size, :price
 
-  def initialize(name, size, price)
-    @name = name
-    @size = size
-    @price = price
+  def initialize(input_options)
+    @name = input_options[:name]
+    @size = input_options[:size]
+    @price = input_options[:price]
   end
 end
 
-plant1 = Plant.new("pothos", "small", 5)
-plant2 = Plant.new("jade", "medium", 10)
-plant3 = Plant.new("euphorbia", "large", 20)
+plant1 = Plant.new(name: "pothos", size: "small", price: 5)
+plant2 = Plant.new(name: "jade", size: "medium", price: 10)
+plant3 = Plant.new(name: "euphorbia", size: "large", price: 20)
 
+p plant3
 p plant1.name
 p plant1.size
 p plant1.price
