@@ -15,11 +15,17 @@ plant1 = {name: "pothos", size: "small", price: 5}
 plant2 = {name: "jade", size: "medium", price: 10}
 plant3 = {:name => "euphorbia", :size => "large", :price => 20}
 
-p plant1
-p plant2
+p plant1[:name]
+p plant2[:price]
 p plant3
 
-class Plants
+# Rewrite your store items using a class instead of a hash.
+# a) Choose which attributes should have “reader” methods and which attributes should have “writer” methods.
+# b) Create an instance from your store item class. Use puts statements to print the 3 attributes individually to the terminal.
+# c) Use the attr_writer method to change a value
+# Bonus: Read more about Ruby classes: https://ruby-doc.com/core/Class.html
+
+class Plant
   attr_reader :name, :size, :price
   attr_writer :name, :size, :price
 
@@ -30,12 +36,12 @@ class Plants
   end
 end
 
-plant1 = Plants.new("pothos", "small", 5)
-plant2 = Plants.new("jade", "medium", 10)
-plant3 = Plants.new("euphorbia", "large", 20)
-
-p plant1
-p plant2
-p plant3
+plant1 = Plant.new("pothos", "small", 5)
+plant2 = Plant.new("jade", "medium", 10)
+plant3 = Plant.new("euphorbia", "large", 20)
 
 p plant1.name
+p plant1.size
+p plant1.price
+plant1.price = 6
+p plant1.price
